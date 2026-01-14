@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoAdomain - Premium Domain Marketplace</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <span class="logo-icon">🌐</span>
+                <span class="logo-text">GoAdomain</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#search">Search Domains</a></li>
+                <li><a href="#featured">Featured</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#" class="admin-link" onclick="showAdminLogin()">Admin</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Find Your Perfect Domain Name</h1>
+                <p class="hero-subtitle">Premium domains for your brand, business, or project. Cloud-ready and server-compatible.</p>
+                
+                <!-- Domain Search -->
+                <div class="domain-search-container">
+                    <form class="domain-search-form" id="searchForm" onsubmit="searchDomain(event)">
+                        <input type="text" id="domainInput" class="search-input" placeholder="Enter your domain name..." required>
+                        <button type="submit" class="search-btn">Search</button>
+                    </form>
+                    <div class="popular-searches">
+                        <span>Popular:</span>
+                        <a href="#" class="popular-tag" onclick="quickSearch('tech')">.tech</a>
+                        <a href="#" class="popular-tag" onclick="quickSearch('store')">.store</a>
+                        <a href="#" class="popular-tag" onclick="quickSearch('online')">.online</a>
+                        <a href="#" class="popular-tag" onclick="quickSearch('app')">.app</a>
+                    </div>
+                </div>
+
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <span class="feature-icon">⚡</span>
+                        <span>Instant Activation</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">☁️</span>
+                        <span>Cloud Ready</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">🔒</span>
+                        <span>Secure Transfer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Results Section -->
+    <section id="search" class="search-results-section" style="display: none;">
+        <div class="container">
+            <h2 class="section-title">Search Results</h2>
+            <div id="searchResults" class="search-results">
+                <!-- Results will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Domains Section -->
+    <section id="featured" class="featured-section">
+        <div class="container">
+            <h2 class="section-title">Featured Premium Domains</h2>
+            <p class="section-subtitle">Hand-picked domains ready for your business</p>
+            
+            <div class="domain-grid">
+                <div class="domain-card">
+                    <div class="domain-name">techstartup.com</div>
+                    <div class="domain-status available">Available</div>
+                    <div class="domain-features">
+                        <span class="badge">Cloud Ready</span>
+                        <span class="badge">Server Compatible</span>
+                    </div>
+                    <button class="btn-purchase" onclick="selectDomain('techstartup.com')">Select Domain</button>
+                </div>
+
+                <div class="domain-card">
+                    <div class="domain-name">innovative.io</div>
+                    <div class="domain-status available">Available</div>
+                    <div class="domain-features">
+                        <span class="badge">Cloud Ready</span>
+                        <span class="badge">Server Compatible</span>
+                    </div>
+                    <button class="btn-purchase" onclick="selectDomain('innovative.io')">Select Domain</button>
+                </div>
+
+                <div class="domain-card">
+                    <div class="domain-name">growthstrategy.net</div>
+                    <div class="domain-status available">Available</div>
+                    <div class="domain-features">
+                        <span class="badge">Cloud Ready</span>
+                        <span class="badge">Server Compatible</span>
+                    </div>
+                    <button class="btn-purchase" onclick="selectDomain('growthstrategy.net')">Select Domain</button>
+                </div>
+
+                <div class="domain-card">
+                    <div class="domain-name">digitalfuture.org</div>
+                    <div class="domain-status available">Available</div>
+                    <div class="domain-features">
+                        <span class="badge">Cloud Ready</span>
+                        <span class="badge">Server Compatible</span>
+                    </div>
+                    <button class="btn-purchase" onclick="selectDomain('digitalfuture.org')">Select Domain</button>
+                </div>
+
+                <div class="domain-card">
+                    <div class="domain-name">smartsolutions.co</div>
+                    <div class="domain-status available">Available</div>
+                    <div class="domain-features">
+                        <span class="badge">Cloud Ready</span>
+                        <span class="badge">Server Compatible</span>
+                    </div>
+                    <button class="btn-purchase" onclick="selectDomain('smartsolutions.co')">Select Domain</button>
+                </div>
+
+                <div class="domain-card">
+                    <div class="domain-name">techventures.biz</div>
+                    <div class="domain-status available">Available</div>
+                    <div class="domain-features">
+                        <span class="badge">Cloud Ready</span>
+                        <span class="badge">Server Compatible</span>
+                    </div>
+                    <button class="btn-purchase" onclick="selectDomain('techventures.biz')">Select Domain</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">Complete domain and hosting solutions</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🌍</div>
+                    <h3>Domain Registration</h3>
+                    <p>Register your perfect domain with instant activation and full DNS management</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">☁️</div>
+                    <h3>Cloud Integration</h3>
+                    <p>Seamless integration with all major cloud providers - AWS, Azure, Google Cloud</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Server Setup</h3>
+                    <p>Automated server configuration for VPS, dedicated servers, and shared hosting</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🛡️</div>
+                    <h3>SSL Security</h3>
+                    <p>Free SSL certificates with every domain for secure connections</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📧</div>
+                    <h3>Email Services</h3>
+                    <p>Professional email setup with your domain name included</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>Analytics Dashboard</h3>
+                    <p>Track your domain performance with comprehensive analytics tools</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cloud Providers Section -->
+    <section class="cloud-providers-section">
+        <div class="container">
+            <h2 class="section-title">Works With All Cloud Systems</h2>
+            <p class="section-subtitle">Your domains are compatible with every major platform</p>
+            
+            <div class="cloud-grid">
+                <div class="cloud-item">
+                    <div class="cloud-logo">AWS</div>
+                    <span>Amazon Web Services</span>
+                </div>
+                <div class="cloud-item">
+                    <div class="cloud-logo">Azure</div>
+                    <span>Microsoft Azure</span>
+                </div>
+                <div class="cloud-item">
+                    <div class="cloud-logo">GCP</div>
+                    <span>Google Cloud Platform</span>
+                </div>
+                <div class="cloud-item">
+                    <div class="cloud-logo">DigitalOcean</div>
+                    <span>DigitalOcean</span>
+                </div>
+                <div class="cloud-item">
+                    <div class="cloud-logo">Heroku</div>
+                    <span>Heroku</span>
+                </div>
+                <div class="cloud-item">
+                    <div class="cloud-logo">Vercel</div>
+                    <span>Vercel</span>
+                </div>
+                <div class="cloud-item">
+                    <div class="cloud-logo">Netlify</div>
+                    <span>Netlify</span>
+                </div>
+                <div class="cloud-item">
+                    <div class="cloud-logo">Cloudflare</div>
+                    <span>Cloudflare</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">About GoAdomain</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>GoAdomain is your premier destination for premium domain names and comprehensive web solutions. We specialize in providing high-quality domains that are ready for immediate deployment across all cloud platforms and server environments.</p>
+                    <p>Our platform offers seamless integration with major cloud providers including AWS, Azure, Google Cloud, DigitalOcean, and many more. Every domain comes with full DNS management, SSL certification, and 24/7 support.</p>
+                    <p>Whether you're a startup, enterprise, or individual developer, GoAdomain provides the tools and services you need to establish your online presence quickly and efficiently.</p>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">50K+</div>
+                        <div class="stat-label">Domains Available</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">99.9%</div>
+                        <div class="stat-label">Uptime Guarantee</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Customer Support</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100+</div>
+                        <div class="stat-label">Cloud Partners</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <p class="section-subtitle">Get in touch with our team</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">📍</span>
+                        <div>
+                            <h4>Address</h4>
+                            <p>123 Domain Street, Tech City, TC 12345</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <div>
+                            <h4>Email</h4>
+                            <p>support@goadomain.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📞</span>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm" onsubmit="submitContact(event)">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>GoAdomain</h4>
+                    <p>Your trusted partner for premium domains and cloud solutions.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#search">Search Domains</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Domain Registration</a></li>
+                        <li><a href="#">Cloud Integration</a></li>
+                        <li><a href="#">Server Setup</a></li>
+                        <li><a href="#">SSL Certificates</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 GoAdomain. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Admin Login Modal -->
+    <div id="adminModal" class="modal">
+        <div class="modal-content admin-modal">
+            <span class="close" onclick="closeAdminModal()">&times;</span>
+            <div class="admin-login-content">
+                <div class="admin-logo">
+                    <span class="logo-icon-large">🌐</span>
+                    <h2>GoAdomain</h2>
+                    <p class="admin-subtitle">Admin Portal</p>
+                </div>
+                
+                <form class="admin-login-form" id="adminLoginForm" onsubmit="adminLogin(event)">
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" id="adminUsername" placeholder="Enter username" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" id="adminPassword" placeholder="Enter password" required>
+                    </div>
+                    <button type="submit" class="btn-admin-login">Login</button>
+                </form>
+
+                <div class="admin-footer">
+                    <p class="license-text">Licensed to: Olawale Abdul-Ganiyu</p>
+                    <p class="license-number">License: GA-2024-ADMIN-001</p>
+                    <p class="authorization">Authorized to operate and use all systems</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Domain Selection Modal -->
+    <div id="domainModal" class="modal">
+        <div class="modal-content domain-modal">
+            <span class="close" onclick="closeDomainModal()">&times;</span>
+            <h2 class="modal-title">Domain Selected</h2>
+            <div class="selected-domain-info">
+                <p class="domain-name-large" id="selectedDomainName"></p>
+                <div class="domain-details">
+                    <p><strong>Status:</strong> <span class="available">Available</span></p>
+                    <p><strong>Cloud Ready:</strong> Yes</p>
+                    <p><strong>Server Compatible:</strong> All platforms</p>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-configure" onclick="configureDomain()">Configure Now</button>
+                <button class="btn-close-modal" onclick="closeDomainModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
